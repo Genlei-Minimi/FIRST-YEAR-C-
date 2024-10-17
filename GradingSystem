@@ -1,0 +1,144 @@
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        string name, program, course, college;
+        
+
+        Console.WriteLine("-----------------------\nInput Name: ");
+        name = Console.ReadLine();
+
+        Console.WriteLine("-----------------------\nInput Progran: ");
+        program = Console.ReadLine();
+
+        Console.WriteLine("-----------------------\nInput Course: ");
+        course = Console.ReadLine();
+
+        Console.WriteLine("-----------------------\nInput College: ");
+        college = Console.ReadLine();
+
+        string option;
+        Console.WriteLine("-----------------------\nPlease Select an Option(Please select 1/2/3) only: ");
+        option = Console.ReadLine();
+
+        if (option == "1")
+        {
+            Console.WriteLine("-----------------------\nInput Grades(50-100): ");
+            int grade = Convert.ToInt32(Console.ReadLine());
+
+
+            if (grade >= 99 && grade <= 100)
+            {
+                Console.WriteLine(name + ", a student from " + program + " under the " + college + ", enrolled in "
+                + course + " received a grade of " + grade + " the corresponding grade point is 1.00" +
+                " which is described as Excellent");
+
+            }
+
+
+            else if (grade >= 99 && grade <= 100)
+            {
+                Console.WriteLine(name + ", a student from " + program + " under the " + college + ", enrolled in "
+                + course + " received a grade of " + grade + " the corresponding grade point is 1.25" +
+                " which is described as Excellent");
+            }
+            else if (grade >= 96 && grade <= 98)
+            {
+                Console.WriteLine(name + ", a student from " + program + " under the " + college + ", enrolled in "
+                + course + " received a grade of " + grade + " the corresponding grade point is 1.50" +
+                " which is described as Excellent");
+            }
+            else if (grade >= 93 && grade <= 95)
+            {
+                Console.WriteLine(name + ", a student from " + program + " under the " + college + ", enrolled in "
+                     + course + " received a grade of " + grade + " the corresponding grade point is 1.50" +
+                     " which is described as Very Satisfactory");
+            }
+
+            else if (grade >= 90 && grade <= 92)
+            {
+                Console.WriteLine(name + ", a student from " + program + " under the " + college + ", enrolled in "
+                    + course + " received a grade of " + grade + " the corresponding grade point is 1.75" +
+                    " which is described as Very Satisfactory");
+            }
+
+            else if (grade >= 87 && grade <= 89)
+            {
+                Console.WriteLine(name + ", a student from " + program + " under the " + college + ", enrolled in "
+                     + course + " received a grade of " + grade + " the corresponding grade point is 2.00" +
+                     " which is described as Satisfactory");
+            }
+            else if (grade >= 84 && grade <= 86)
+            {
+                Console.WriteLine(name + ", a student from " + program + " under the " + college + ", enrolled in "
+                     + course + " received a grade of " + grade + " the corresponding grade point is 2.25" +
+                     " which is described as Satisfactory");
+            }
+            else if (grade >= 81 && grade <= 83)
+            {
+                Console.WriteLine(name + ", a student from " + program + " under the " + college + ", enrolled in "
+                     + course + " received a grade of " + grade + " the corresponding grade point is 2.50" +
+                     " which is described as Fairly Satisfactory");
+            }
+
+            else if (grade >= 78 && grade <= 80)
+            {
+                Console.WriteLine(name + ", a student from " + program + " under the " + college + ", enrolled in "
+                    + course + " received a grade of " + grade + " the corresponding grade point is 2.75" +
+                    " which is described as Fairly Satisfactory");
+            }
+
+            else if (grade >= 75 && grade <= 77)
+            {
+                Console.WriteLine(name + ", a student from " + program + " under the " + college + ", enrolled in "
+                    + course + " received a grade of " + grade + " the corresponding grade point is 3.00" +
+                    " which is described as Passed");
+            }
+
+            else if (grade >= 70 && grade <= 74)
+            {
+                Console.WriteLine(name + ", a student from " + program + " under the " + college + ", enrolled in "
+                    + course + " received a grade of " + grade + " the corresponding grade point is 4.00" +
+                    " which is described as Conditional Failure");
+            }
+
+            else if (grade <= 69 && grade >= 50)
+            {
+
+                Console.WriteLine(name + ", a student from " + program + " under the " + college + ", enrolled in "
+                    + course + " received a grade of " + grade + " the corresponding grade point is 5.00" +
+                    " which is described as Failed");
+
+            }
+            else if (grade >= 101)
+            {
+                Console.WriteLine("Invalid Grade");
+            }
+
+            else if (grade <= 49)
+            {
+                Console.WriteLine("Invalid Grade");
+            }
+
+
+        }
+        else if (option == "2")
+        {
+            Console.WriteLine("Numerical Grade Grade Point Description\n99-100         1.00         Excellent\n96-98          1.25         Excellent" +
+                "\n93-95          1.50        Very Satisfactory\n90-92          1.75        Very Satisfactory\n87-89          2.00           Satisfactory" +
+                "\n84-86          2.25          Satisfactory\n81-83       2.50          Fairly Satisfactory\n78-80         2.75          Fairly Satisfactory" +
+                "\n75-77          3.00          Passed\n70-74       4.00            Condtional Failure\n69 and below       5.00       Failed");
+        }
+
+        else if (option == "3")
+        {
+            Console.WriteLine("Exiting the program...");
+
+        }
+        else
+        {
+            Console.WriteLine("Invalid option. Please choose a valid option from the menu (1,2,3). Exiting the program");
+
+        }
+    }
+}
