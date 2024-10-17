@@ -1,0 +1,108 @@
+using System;
+ namespace LoanApprovalSystem
+{
+    class LAS
+    {
+        static void Main(string[] args)
+        {
+            int customerAge, Incomelvl, creditscore, loanamt, loantenure, n;
+            double monthlyPayment, totalCost, r = 0, baseRate = 0, loanInterest = 0;
+            string employmentstats, loantype;
+
+            Console.WriteLine("-----------------------\nAge: ");
+            customerAge = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("-----------------------\nMonthly Income: ");
+            Incomelvl = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("-----------------------\nCredit Score: ");
+            creditscore = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("-----------------------\nEmployment Status: ");
+            employmentstats = Console.ReadLine();
+
+            Console.WriteLine("-----------------------\nLoan Type (Personal, Car, Home): ");
+            loantype = Console.ReadLine();
+
+           
+
+            Console.WriteLine("-----------------------\nLoan Tenure (years): ");
+            loantenure = Convert.ToInt32(Console.ReadLine());
+            if (customerAge >= 21 && customerAge <= 25)
+            {
+                Console.WriteLine("-----------------------\nEligibility: You are eligible only for personal loans.");
+            }
+            else if (customerAge >= 26 && customerAge <= 45)
+            {
+                Console.WriteLine("-----------------------\nEligibility: You are eligible for personal loans, car loans, and home loans.");
+            }
+            else if (customerAge >= 46 && customerAge <= 65)
+            {
+                Console.WriteLine("-----------------------\nEligibility: You are eligible only for home loans and car loans.");
+            }
+            else
+            {
+                Console.WriteLine("-----------------------\nEligibility: User must be at least 21 years old and not more than 65 years old.");
+                return;
+            }
+            // Loan Amount based on income level
+            if (Incomelvl < 15000)
+            {
+                loanamt = 200000;
+                Console.WriteLine("Loan Amount: P200,000");
+            }
+            else if (Incomelvl >= 15000 && Incomelvl < 50000)
+            {
+                loanamt = 1000000;
+                Console.WriteLine("Loan Amount: P1,000,000");
+            }
+            else
+            {
+                loanamt = 5000000;
+                Console.WriteLine("Loan Amount: P5,000,000");
+            }
+
+            // Interest rate based on credit score and loan type
+            if (loantype == "Personal")
+            {
+                if (creditscore > 750) r = 0.05;
+                else if (creditscore >= 600 && creditscore <= 750) r = 0.08;
+                else r = 0.10;
+            }
+            else if (loantype == "Car")
+            {
+                if (creditscore > 750) r = 0.04;
+                else if (creditscore >= 600 && creditscore <= 750) r = 0.06;
+                else r = 0.08;
+            }
+            else if (loantype == "Home")
+            {
+                if (creditscore > 750) r = 0.03;
+                else if (creditscore >= 600 && creditscore <= 750) r = 0.05;
+                else r = 0.07;
+            }
+
+            // Adjust interest rate for self-employed users
+            if (employmentstats == "Self-employed")
+            {
+                r += 0.015;
+                Console.WriteLine($"Interest Rate: {r * 100}% (There would be additional 1.5% rate for self-employed users)");
+            }
+            else
+            {
+                Console.WriteLine($"Interest Rate: {r * 100}%");
+            }
+
+            // Loan payment calculation
+            n = loantenure * 12; // convert tenure to months
+            double monthlyRate = r / 12; // monthly interest rate
+            monthlyPayment = loanamt * (monthlyRate * Math.Pow(1 + monthlyRate, n)) / (Math.Pow(1 + monthlyRate, n) - 1);
+
+            // Calculate total cost of the loan
+            totalCost = monthlyPayment * n;
+
+            Console.WriteLine($"Your monthly payment will be: P{monthlyPayment:F2}");
+            Console.WriteLine($"Total cost of the loan over {loantenure} years: P{totalCost:F2}");
+        }
+    }
+}
