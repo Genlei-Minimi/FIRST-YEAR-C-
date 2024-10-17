@@ -1,0 +1,100 @@
+using System;
+class BasicGradingSystem {
+
+        static void Main(string[] args)
+        {
+            string value;
+            int fgrade;
+            do
+                //user should input a grade here to calculate
+            {
+                Console.WriteLine("-----------------------\nInput Final Grade: ");
+                fgrade = Convert.ToInt32(Console.ReadLine());
+
+                //to determine if the grade point is 1.00 and fit to description of excellent
+                if (fgrade >= 99 && fgrade <= 100)
+                {
+                    Console.WriteLine("Grade Point: 1.00\nDescription: Excellent");
+                }
+
+                //to determine if the grade point is 1.25 and fit to description of excellent
+                else if (fgrade >= 96 && fgrade <= 98)
+                {
+                    Console.WriteLine("---------------\nGrade Point: 1.25\nDescription: Excellent");
+                }
+
+                //to determine if the grade point is 1.50 and fit to description of very satisfactory
+                else if (fgrade >= 93 && fgrade <= 95)
+                {
+                    Console.WriteLine("---------------\nGrade Point: 1.50\nDescription: Very Satisfactory");
+                }
+
+                //to determine if the grade point is 1.75 and fit to description of very satisfactory
+                else if (fgrade >= 90 && fgrade <= 92)
+                {
+                    Console.WriteLine("---------------\nGrade Point: 1.75\nDescription: Very Satisfactory");
+                }
+
+                //to determine if the grade point is 2.00 and fit to description of satisfactory
+                else if (fgrade >= 87 && fgrade <= 89)
+                {
+                    Console.WriteLine("---------------\nGrade Point: 2.00\nDescription: Satisfactory");
+                }
+
+                //to determine if the grade point is 2.25 and fit to description of satisfactory
+                else if (fgrade >= 84 && fgrade <= 86)
+                {
+                    Console.WriteLine("---------------\nGrade Point: 2.25\nDescription: Satisfactory");
+                }
+
+                //to determine if the grade point is 2.50 and fit to description of fairly satisfactory
+                else if (fgrade >= 81 && fgrade <= 83)
+                {
+                    Console.WriteLine("---------------\nGrade Point: 2.50\nDescription: Fairly Satisfactory");
+                }
+
+                //to determine if the grade point is 2.75 and fit to description of fairly satisfactory
+                else if (fgrade >= 78 && fgrade <= 80)
+                {
+                    Console.WriteLine("---------------\nGrade Point: 2.75\nDescription: Fairly Satisfactory");
+                }
+
+                //to determine if the grade point is 3.00 and fit to description of passed
+                else if (fgrade >= 75 && fgrade <= 77)
+                {
+                    Console.WriteLine("---------------\nGrade Point: 3.00\nDescription: Passed");
+                }
+
+                //to determine if the grade point is 4.00 and fit to description of condtional failure
+                else if (fgrade >= 70 && fgrade <= 74)
+                {
+                    Console.WriteLine("---------------\nGrade Point: 4.00\nDescription: Condtional Failure");
+                }
+
+                //to determine if the grade point is 5.00 and fit to description of failed
+                else if (fgrade >= 0 && fgrade <= 69)
+                {
+                    Console.WriteLine("---------------\nGrade Point: 5.00\nDescription: Failed");
+                }
+
+                //to determine if the input grade is above 100
+                else if (fgrade >= 101)
+                {
+                    Console.WriteLine("---------------\nPlease Input Valid Grades");
+
+                }
+
+                //to determine if the input grade is below 0
+                else if (fgrade <= -1)
+                {
+                    Console.WriteLine("---------------\nPlease Input Valid Grades");
+
+                }
+
+                //if the user wants to input another grade to calculate
+                Console.WriteLine("---------------\nEnter New Grade? (Y/N)");
+                value = Console.ReadLine();
+            }while(value =="y"||value =="Y");
+        }
+    }
+
