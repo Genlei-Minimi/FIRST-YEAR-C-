@@ -1,0 +1,36 @@
+namespace Act1{
+    internal class Program    {
+        static void Main(string[] args)        {
+            String Fname1, Fname2, Lname1, Lname2;            int age1, age2;
+            //Your code goes here
+            /*  Console.WriteLine("STUDENT #1");              Console.WriteLine("Enter your first name:");
+              Fname1 = Console.ReadLine();              Console.WriteLine("Enter your last name:");
+              Lname1 = Console.ReadLine();              Console.WriteLine("Enter your age: ");
+              age1 = Convert.ToInt32(Console.ReadLine());
+              Console.WriteLine("---------------");              Console.WriteLine("STUDENT #2");
+              Console.WriteLine("Enter your first name:");              Fname2 = Console.ReadLine();
+              Console.WriteLine("Enter your last name:");              Lname2 = Console.ReadLine();
+              Console.WriteLine("Enter your age: ");              age2 = Convert.ToInt32(Console.ReadLine());
+              Console.WriteLine("Hello, " + Fname1 + " " + Lname1 + " and " + Fname2 +
+                " " + Lname2 + ". Your ages are " + age1 + " and " + age2);*/
+          
+          /* double pi = 3.14159265;             double r, result;
+             Console.WriteLine("Enter Radius: ");
+             r = Convert.ToDouble(Console.ReadLine());
+             result = Convert.ToDouble((pi * r) * r);
+             Console.WriteLine("Area: " + result);*/            /*
+                        double num1, num2;                        int add, subs, multi;
+                       double divi, div1, div2;                        Console.WriteLine("Enter first number: ");
+                        num1 = Convert.ToInt32(Console.ReadLine());                        Console.WriteLine("Enter second number: ");
+                        num2 = Convert.ToInt32(Console.ReadLine());                        add = Convert.ToInt32((num1 + num2));
+                        subs = Convert.ToInt32((num1 - num2));                        multi = Convert.ToInt32((num1 * num2));
+                        divi = Convert.ToDouble((num1 / num2));                        Console.WriteLine("Addition: " + add);
+                        Console.WriteLine("Subtraction: " + subs);                        Console.WriteLine("Multiplication: " + multi);
+                        Console.WriteLine("Division: " + divi);            */
+            int num1, num2, result;            Console.WriteLine("Enter number: ");
+            num1 = Convert.ToInt32(Console.ReadLine());            result = num1 % 2;
+            if (result == 1)
+                Console.WriteLine(result + " is an odd number");            else Console.WriteLine(result + " is an even number");
+
+            Console.ReadKey(true);        }    }
+    }
