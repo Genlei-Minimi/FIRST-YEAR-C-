@@ -1,0 +1,148 @@
+using System;
+class MixAndMatchOrderingSystem {
+
+    internal class Program
+{
+    private static void Main(string[] args)
+    {
+        string mealChoice, sideChoice, drinksChoice, citizen;
+        string meal1, meal2, meal3;
+        string side1, side2, side3;
+        string drink1, drink2, drink3;
+        double price = 150;
+        double quantity;
+        double finalprice, seniorPrice,disPrice;
+        meal1 = "1-Piece Chicken Joy";
+        meal2 = "Johnny Spaghetti";
+        meal3 = "Burger Steak";
+        side1 = "French Fries";
+        side2 = "Mashed Potato";
+        side3 = "Buttered Corn";
+        drink1 = "Coke";
+        drink2 = "Sprite";
+        drink3 = "Iced Tea";
+
+
+        Console.WriteLine("----------------\nMain Meal");
+        Console.WriteLine("1. " + meal1);
+        Console.WriteLine("2. " + meal2);
+        Console.WriteLine("3. " + meal3);
+        Console.WriteLine("Please select a meal(1/2/3): ");
+
+        mealChoice = Console.ReadLine();
+        switch (mealChoice)
+        {
+            case "1":
+                mealChoice = meal1;
+                break;
+            case "2":
+                mealChoice = meal2;
+                break;
+            case "3":
+                mealChoice = meal3;
+                break;
+            default:
+                Console.WriteLine("Inavalid option! Exiting...");
+                return;
+
+        }
+
+        Console.WriteLine("----------------\nSide Meal");
+        Console.WriteLine("1. " + side1);
+        Console.WriteLine("2. " + side2);
+        Console.WriteLine("3. " + side3);
+        Console.WriteLine("Please select side(1/2/3): ");
+        sideChoice = Console.ReadLine();
+        switch (sideChoice)
+        {
+            case "1":
+                sideChoice = side1;
+                break;
+
+            case "2":
+                sideChoice = side2;
+                break;
+
+            case "3":
+                sideChoice = side3;
+                break;
+            default:
+                Console.WriteLine("Inavalid option! Exiting....");
+                return;
+        }
+
+        Console.WriteLine("----------------\nDrinks Meal");
+        Console.WriteLine("1. " + drink1);
+        Console.WriteLine("2. " + drink2);
+        Console.WriteLine("3. " + drink3);
+        Console.WriteLine("Please select drink(1/2/3): ");
+        drinksChoice = Console.ReadLine();
+        switch (drinksChoice)
+        {
+            case "1":
+                drinksChoice = drink1;
+                break;
+            case "2":
+                drinksChoice = drink2;
+                break;
+            case "3":
+                drinksChoice = drink3;
+                break;
+            default:
+                Console.WriteLine("----------------\nInavalid option! Exiting...");
+                return;
+        }
+        Console.WriteLine("----------------\nQuantity: ");
+        quantity = Convert.ToDouble(Console.ReadLine());
+        finalprice = quantity * price;
+
+
+
+        
+        if (quantity > 0)
+        {
+            
+            Console.WriteLine("----------------\nPrice: P" + finalprice);
+
+        }
+        else if (quantity <= 0) {
+            Console.WriteLine("----------------\nInvalid Quantity");
+            return;
+        }
+      
+        
+        Console.WriteLine("----------------\nAre you a senior citizen?");
+        citizen = Console.ReadLine().ToLower();
+
+        
+        double discount = 0.2;
+        switch (citizen)
+        {
+            case "yes":
+                 seniorPrice = finalprice * discount;
+               
+                Console.WriteLine($"----------------\nNumber of Order: {quantity}");
+                Console.WriteLine($"----------------\nYour Order: \n{mealChoice}\n{sideChoice}\n{drinksChoice}");
+                Console.WriteLine($"----------------\nTotal Price: P{finalprice - seniorPrice:F2}");
+                Console.WriteLine($"----------------\nThank you for ordering to Johnnybee!");
+                break;
+            case "no":
+                seniorPrice = finalprice;
+
+                Console.WriteLine($"----------------\nQuantity: {quantity}");
+                Console.WriteLine($"----------------\nYour Order: \n{mealChoice}\n{sideChoice}\n{drinksChoice}");
+                Console.WriteLine($"----------------\nTotal Price: P{finalprice:F2}");
+                Console.WriteLine($"----------------\nThank you for ordering to Johnnybee!");
+                break;
+            default:
+                Console.WriteLine("----------------\nInvalid answer! Exiting now...");
+                return;
+                  
+        }
+      
+
+    }
+
+
+}
+}
