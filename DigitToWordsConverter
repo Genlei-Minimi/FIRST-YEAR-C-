@@ -1,0 +1,122 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+    input:
+        Console.Write("Input a number(0-999): ");
+        string input = Console.ReadLine();
+
+        if (int.TryParse(input, out int number) && number >= 100 && number <= 999)
+        {
+            int hundreds = number / 100;
+            int tens = (number / 10) % 10;
+            int units = number % 10;
+
+            string n1 = "", n2 = "", n3 = "";
+
+            // Map hundreds place
+            if (hundreds == 1) n1 = "One";
+            else if (hundreds == 2) n1 = "Two";
+            else if (hundreds == 3) n1 = "Three";
+            else if (hundreds == 4) n1 = "Four";
+            else if (hundreds == 5) n1 = "Five";
+            else if (hundreds == 6) n1 = "Six";
+            else if (hundreds == 7) n1 = "Seven";
+            else if (hundreds == 8) n1 = "Eight";
+            else if (hundreds == 9) n1 = "Nine";
+            else if (hundreds == 0) n1 = "Zero";
+
+            // Map tens place
+            if (tens == 1) n2 = "One";
+            else if (tens == 2) n2 = "Two";
+            else if (tens == 3) n2 = "Three";
+            else if (tens == 4) n2 = "Four";
+            else if (tens == 5) n2 = "Five";
+            else if (tens == 6) n2 = "Six";
+            else if (tens == 7) n2 = "Seven";
+            else if (tens == 8) n2 = "Eight";
+            else if (tens == 9) n2 = "Nine";
+            else if (tens == 0) n2 = "Zero";
+
+            // Map units place
+            if (units == 1) n3 = "One";
+            else if (units == 2) n3 = "Two";
+            else if (units == 3) n3 = "Three";
+            else if (units == 4) n3 = "Four";
+            else if (units == 5) n3 = "Five";
+            else if (units == 6) n3 = "Six";
+            else if (units == 7) n3 = "Seven";
+            else if (units == 8) n3 = "Eight";
+            else if (units == 9) n3 = "Nine";
+            else if (units == 0) n3 = "Zero";
+
+            Console.WriteLine("Output: " + n1 + " " + n2 + " " + n3);
+     goto input;   }
+      else if (int.TryParse(input, out number) && number >= 10 && number <= 999)
+        {
+            
+            int tens = (number / 10) % 10;
+            int units = number % 10;
+
+            string n2 = "", n3 = "";
+
+              // Map tens place
+            if (tens == 1) n2 = "One";
+            else if (tens == 2) n2 = "Two";
+            else if (tens == 3) n2 = "Three";
+            else if (tens == 4) n2 = "Four";
+            else if (tens == 5) n2 = "Five";
+            else if (tens == 6) n2 = "Six";
+            else if (tens == 7) n2 = "Seven";
+            else if (tens == 8) n2 = "Eight";
+            else if (tens == 9) n2 = "Nine";
+            else if (tens == 0) n2 = "Zero";
+
+            // Map units place
+            if (units == 1) n3 = "One";
+            else if (units == 2) n3 = "Two";
+            else if (units == 3) n3 = "Three";
+            else if (units == 4) n3 = "Four";
+            else if (units == 5) n3 = "Five";
+            else if (units == 6) n3 = "Six";
+            else if (units == 7) n3 = "Seven";
+            else if (units == 8) n3 = "Eight";
+            else if (units == 9) n3 = "Nine";
+            else if (units == 0) n3 = "Zero";
+            
+            
+            
+       Console.WriteLine("Output: " + n2 + " " + n3);
+      goto input;     
+        }else if (int.TryParse(input, out number) && number >= 0 && number <= 999)
+        {
+          int units = number % 10;
+            
+
+            string n3 = "";
+
+            if (units == 1) n3 = "One";
+            else if (units == 2) n3 = "Two";
+            else if (units == 3) n3 = "Three";
+            else if (units == 4) n3 = "Four";
+            else if (units == 5) n3 = "Five";
+            else if (units == 6) n3 = "Six";
+            else if (units == 7) n3 = "Seven";
+            else if (units == 8) n3 = "Eight";
+            else if (units == 9) n3 = "Nine";
+            else if (units == 0) n3 = "Zero";
+            
+            
+            
+            Console.WriteLine("Output: " + n3);
+     goto input;
+        }
+        else
+        {
+            Console.WriteLine("Please enter only from 0-999.");
+            goto input;
+        }
+    }
+}
