@@ -1,0 +1,37 @@
+using System;
+namespace Palindrome
+{
+    public class PalindromeChecker
+    {
+        static void Main(string[] args)
+        {
+          retry:
+            Console.Write("Enter a Number To Check Palindrome : ");
+            int num = Convert.ToInt32(Console.ReadLine());
+            int remainder, sum = 0;
+            int temp = num;
+            while (num > 0)
+            {
+                //Get the remainder by dividing the number with 10  
+                remainder = num % 10;
+
+                //multiply the sum with 10 and then add the remainder
+                sum = (sum * 10) + remainder;
+
+                //Get the quotient by dividing the number with 10 
+                num = num / 10; 
+            }
+            if (temp == sum)
+            {
+                Console.WriteLine($"The number {temp} is Palindrome.");
+          goto retry;
+            }
+            else
+            {
+                Console.WriteLine($"Number {temp} is not Palindrome");
+      goto retry;
+    }
+            Console.ReadKey();
+        }
+    }
+}
