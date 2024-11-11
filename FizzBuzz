@@ -1,0 +1,43 @@
+using System;
+
+class FizzBuzz
+{
+    static void Main()
+    {
+        // Ask the user to enter an integer value for n
+        Console.Write("Enter an integer n: ");
+
+       
+        if (int.TryParse(Console.ReadLine(), out int n))
+        {
+            // Loop from 1 to the input number n
+            for (int i = 1; i <= n; i++)
+            {
+                // Check if i is divisible by both 3 and 5
+                if (i % 3 == 0 && i % 5 == 0)
+                {
+                    Console.WriteLine("FizzBuzz"); // Output "FizzBuzz" for multiples of both 3 and 5
+                }
+                // Check if i is divisible only by 3
+                else if (i % 3 == 0)
+                {
+                    Console.WriteLine("Fizz"); // Output "Fizz" for multiples of 3
+                }
+                // Check if i is divisible only by 5
+                else if (i % 5 == 0)
+                {
+                    Console.WriteLine("Buzz");          
+                    }
+                else
+                {
+                    Console.WriteLine(i); 
+                }
+            }
+        }
+        else
+        {
+            // If the input invalid, ask the user to put a valid input
+            Console.WriteLine("Please enter a valid input.");
+        }
+    }
+}
